@@ -1,0 +1,172 @@
+{
+  "annotations": {
+    "good_sample_1.jpg": {
+      "description": "Defect-free sample image",
+      "defects": [],
+      "quality_status": "PASS",
+      "notes": "Clean surface with no visible defects. Used as reference for comparison."
+    },
+    "defect_scratch_1.jpg": {
+      "description": "Sample with scratch defects",
+      "defects": [
+        {
+          "type": "scratch",
+          "location": "Left side - vertical scratch",
+          "approximate_coordinates": [165, 300],
+          "severity": "medium",
+          "description": "Deep vertical scratch running from top to bottom"
+        },
+        {
+          "type": "scratch",
+          "location": "Center - vertical scratch",
+          "approximate_coordinates": [410, 300],
+          "severity": "high",
+          "description": "Long prominent scratch in center region"
+        },
+        {
+          "type": "scratch",
+          "location": "Right side - vertical scratch",
+          "approximate_coordinates": [555, 315],
+          "severity": "low",
+          "description": "Minor surface scratch"
+        }
+      ],
+      "quality_status": "FAIL",
+      "notes": "Multiple linear defects indicating surface damage during manufacturing or handling"
+    },
+    "defect_discolor_1.jpg": {
+      "description": "Sample with discoloration defects",
+      "defects": [
+        {
+          "type": "discoloration",
+          "location": "Center-left circular region",
+          "approximate_coordinates": [300, 300],
+          "severity": "high",
+          "description": "Large circular discolored area indicating chemical exposure or material inconsistency"
+        },
+        {
+          "type": "discoloration",
+          "location": "Center-right elliptical region",
+          "approximate_coordinates": [500, 250],
+          "severity": "medium",
+          "description": "Elliptical discoloration suggesting uneven coating or oxidation"
+        },
+        {
+          "type": "discoloration",
+          "location": "Bottom-left rectangular region",
+          "approximate_coordinates": [240, 425],
+          "severity": "low",
+          "description": "Small rectangular discolored patch"
+        }
+      ],
+      "quality_status": "FAIL",
+      "notes": "Color variations indicating material inconsistencies or processing issues"
+    },
+    "defect_missing_1.jpg": {
+      "description": "Sample with missing component defects",
+      "defects": [
+        {
+          "type": "missing_component",
+          "location": "Center rectangular void",
+          "approximate_coordinates": [300, 240],
+          "severity": "high",
+          "description": "Large rectangular area where component should be present"
+        },
+        {
+          "type": "missing_component",
+          "location": "Center-right circular void",
+          "approximate_coordinates": [500, 350],
+          "severity": "high",
+          "description": "Circular hole indicating missing circular component"
+        },
+        {
+          "type": "missing_component",
+          "location": "Top-center rectangular void",
+          "approximate_coordinates": [425, 165],
+          "severity": "medium",
+          "description": "Small rectangular gap where part is absent"
+        }
+      ],
+      "quality_status": "FAIL",
+      "notes": "Critical assembly defects with multiple missing parts requiring rejection"
+    },
+    "defect_multiple_1.jpg": {
+      "description": "Sample with multiple defect types",
+      "defects": [
+        {
+          "type": "scratch",
+          "location": "Left vertical line",
+          "approximate_coordinates": [160, 225],
+          "severity": "medium",
+          "description": "Vertical scratch defect"
+        },
+        {
+          "type": "discoloration",
+          "location": "Center circular region",
+          "approximate_coordinates": [400, 250],
+          "severity": "medium",
+          "description": "Circular discolored area"
+        },
+        {
+          "type": "missing_component",
+          "location": "Right-bottom rectangular void",
+          "approximate_coordinates": [585, 375],
+          "severity": "medium",
+          "description": "Rectangular missing component"
+        }
+      ],
+      "quality_status": "FAIL",
+      "notes": "Complex defect pattern with all three defect types present. Indicates multiple process failures."
+    }
+  },
+  "defect_type_descriptions": {
+    "scratch": {
+      "detection_method": "Edge detection using Canny algorithm followed by contour analysis",
+      "characteristics": "Linear features with high aspect ratio (height > 2 * width)",
+      "severity_criteria": {
+        "low": "Area < 300 pixels, minor surface marks",
+        "medium": "Area 300-600 pixels, visible scratches",
+        "high": "Area > 600 pixels, deep or long scratches"
+      },
+      "color_marker": "Red (BGR: 0, 0, 255)"
+    },
+    "discoloration": {
+      "detection_method": "LAB color space analysis with CLAHE enhancement and brightness variation detection",
+      "characteristics": "Irregular regions with significant deviation from mean brightness (>30 units)",
+      "severity_criteria": {
+        "low": "Area < 400 pixels, minor color variation",
+        "medium": "Area 400-800 pixels, noticeable discoloration",
+        "high": "Area > 800 pixels, severe color deviation"
+      },
+      "color_marker": "Blue (BGR: 255, 0, 0)"
+    },
+    "missing_component": {
+      "detection_method": "Binary thresholding with morphological closing to detect voids",
+      "characteristics": "Compact regions with aspect ratio 0.5-2.0 representing missing parts",
+      "severity_criteria": {
+        "low": "Area < 500 pixels, small missing parts",
+        "medium": "Area 500-1000 pixels, noticeable missing components",
+        "high": "Area > 1000 pixels, large missing critical components"
+      },
+      "color_marker": "Green (BGR: 0, 255, 0)"
+    }
+  },
+  "confidence_scoring": {
+    "description": "Confidence scores represent the algorithm's certainty in defect classification",
+    "range": "0.0 to 1.0",
+    "interpretation": {
+      "0.0-0.3": "Low confidence - possible false positive",
+      "0.3-0.7": "Medium confidence - likely defect",
+      "0.7-1.0": "High confidence - definite defect"
+    },
+    "calculation": "Based on defect area, contrast, and morphological features"
+  },
+  "coordinate_system": {
+    "origin": "Top-left corner of image (0, 0)",
+    "x_axis": "Horizontal, increases right",
+    "y_axis": "Vertical, increases down",
+    "units": "pixels",
+    "bbox_format": "[x, y, width, height]",
+    "center_format": "[x, y]"
+  }
+}

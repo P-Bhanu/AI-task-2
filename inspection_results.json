@@ -1,0 +1,233 @@
+[
+  {
+    "image_path": "sample_images/defect_missing_1.jpg",
+    "timestamp": "2026-01-09T16:50:39.325120",
+    "total_defects": 4,
+    "defects": [
+      {
+        "type": "scratch",
+        "bbox": [
+          292,
+          28,
+          5,
+          26
+        ],
+        "center": [
+          294,
+          40
+        ],
+        "confidence": 0.09,
+        "severity": "low",
+        "area": 90.0
+      },
+      {
+        "type": "scratch",
+        "bbox": [
+          249,
+          28,
+          5,
+          26
+        ],
+        "center": [
+          250,
+          40
+        ],
+        "confidence": 0.092,
+        "severity": "low",
+        "area": 92.0
+      },
+      {
+        "type": "missing_component",
+        "bbox": [
+          450,
+          300,
+          101,
+          101
+        ],
+        "center": [
+          500,
+          350
+        ],
+        "confidence": 0.88,
+        "severity": "medium",
+        "area": 7910.0
+      },
+      {
+        "type": "missing_component",
+        "bbox": [
+          399,
+          149,
+          53,
+          33
+        ],
+        "center": [
+          424,
+          165
+        ],
+        "confidence": 0.827,
+        "severity": "low",
+        "area": 1654.0
+      }
+    ],
+    "quality_status": "FAIL"
+  },
+  {
+    "image_path": "sample_images/good_sample_1.jpg",
+    "timestamp": "2026-01-09T16:50:39.341782",
+    "total_defects": 0,
+    "defects": [],
+    "quality_status": "PASS"
+  },
+  {
+    "image_path": "sample_images/defect_multiple_1.jpg",
+    "timestamp": "2026-01-09T16:50:39.354848",
+    "total_defects": 3,
+    "defects": [
+      {
+        "type": "scratch",
+        "bbox": [
+          148,
+          147,
+          25,
+          157
+        ],
+        "center": [
+          159,
+          225
+        ],
+        "confidence": 0.645,
+        "severity": "low",
+        "area": 645.0
+      },
+      {
+        "type": "scratch",
+        "bbox": [
+          281,
+          26,
+          5,
+          28
+        ],
+        "center": [
+          283,
+          39
+        ],
+        "confidence": 0.098,
+        "severity": "low",
+        "area": 98.0
+      },
+      {
+        "type": "missing_component",
+        "bbox": [
+          549,
+          349,
+          73,
+          53
+        ],
+        "center": [
+          584,
+          375
+        ],
+        "confidence": 0.88,
+        "severity": "low",
+        "area": 3735.0
+      }
+    ],
+    "quality_status": "FAIL"
+  },
+  {
+    "image_path": "sample_images/defect_scratch_1.jpg",
+    "timestamp": "2026-01-09T16:50:39.366697",
+    "total_defects": 3,
+    "defects": [
+      {
+        "type": "scratch",
+        "bbox": [
+          548,
+          247,
+          15,
+          137
+        ],
+        "center": [
+          555,
+          315
+        ],
+        "confidence": 0.546,
+        "severity": "low",
+        "area": 546.0
+      },
+      {
+        "type": "scratch",
+        "bbox": [
+          148,
+          196,
+          35,
+          209
+        ],
+        "center": [
+          164,
+          299
+        ],
+        "confidence": 0.95,
+        "severity": "low",
+        "area": 1138.0
+      },
+      {
+        "type": "scratch",
+        "bbox": [
+          398,
+          147,
+          25,
+          307
+        ],
+        "center": [
+          409,
+          299
+        ],
+        "confidence": 0.95,
+        "severity": "low",
+        "area": 1255.0
+      }
+    ],
+    "quality_status": "FAIL"
+  },
+  {
+    "image_path": "sample_images/defect_discolor_1.jpg",
+    "timestamp": "2026-01-09T16:50:39.381462",
+    "total_defects": 2,
+    "defects": [
+      {
+        "type": "scratch",
+        "bbox": [
+          478,
+          26,
+          5,
+          28
+        ],
+        "center": [
+          479,
+          39
+        ],
+        "confidence": 0.099,
+        "severity": "low",
+        "area": 99.0
+      },
+      {
+        "type": "scratch",
+        "bbox": [
+          313,
+          26,
+          5,
+          28
+        ],
+        "center": [
+          315,
+          39
+        ],
+        "confidence": 0.098,
+        "severity": "low",
+        "area": 98.0
+      }
+    ],
+    "quality_status": "FAIL"
+  }
+]
